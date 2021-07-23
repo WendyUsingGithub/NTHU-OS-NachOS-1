@@ -7,8 +7,5 @@ make
 cd ..
 cd test
 make clean
-make add
-../build.linux/nachos -e add
-# make consoleIO_test1
-# ../build.linux/nachos -e consoleIO_test1
-# ../build.linux/nachos -e consoleIO_test1a
+make fileIO_test1
+../build.linux/nachos -e fileIO_test1
