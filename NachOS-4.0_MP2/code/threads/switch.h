@@ -19,7 +19,6 @@
 #define SWITCH_H
 
 #include "copyright.h"
-#define x86 /* wendy */
 
 #ifdef DECMIPS
 

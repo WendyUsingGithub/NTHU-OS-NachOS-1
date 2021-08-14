@@ -42,6 +42,7 @@
 // Copyright (c) 1992-1993 The Regents of the University of California.
 // All rights reserved.  See copyright.h for copyright notice and limitation 
 // of liability and disclaimer of warranty provisions.
+
 #ifndef FILESYS_STUB
 
 #include "copyright.h"
@@ -77,7 +78,6 @@
 //
 //	"format" -- should we initialize the disk?
 //----------------------------------------------------------------------
-
 
 int FileSystem::CreateFile0(char* name, int initialSize)
 {
@@ -155,7 +155,7 @@ FileSystem::FileSystem(bool format)
     // reads the file header off of disk (and currently the disk has garbage
     // on it!).
 
-        DEBUG(dbgFile, "Writing headers back to disk.");
+    DEBUG(dbgFile, "Writing headers back to disk.");
 	mapHdr->WriteBack(FreeMapSector);    
 	dirHdr->WriteBack(DirectorySector);
 
