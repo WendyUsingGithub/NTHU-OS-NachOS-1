@@ -96,7 +96,6 @@ ExceptionHandler(ExceptionType which)
 
 			if(status != -1) status = 1;
 			kernel->machine->WriteRegister(2, (int) status);
-			
 			}
 			kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
 			kernel->machine->WriteRegister(PCReg, kernel->machine->ReadRegister(PCReg) + 4);
@@ -115,7 +114,6 @@ ExceptionHandler(ExceptionType which)
 			// 1: success
 			// 0: failed
 			kernel->machine->WriteRegister(2, (int) id);
-
 			}
 
 			kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
@@ -139,7 +137,6 @@ ExceptionHandler(ExceptionType which)
 			// positive integer: success
 			// -1: failed
 			kernel->machine->WriteRegister(2, (int) status);
-			
 			}
 
 			kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
@@ -162,7 +159,6 @@ ExceptionHandler(ExceptionType which)
 			// 1: success
 			// 0: failed
 			kernel->machine->WriteRegister(2, (int) status);
-			
 			}
 
 			kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
@@ -187,7 +183,6 @@ ExceptionHandler(ExceptionType which)
 			// 0: failed
 			if(status != -1) status = 1;
 			kernel->machine->WriteRegister(2, (int) status);
-			
 			}
 
 			kernel->machine->WriteRegister(PrevPCReg, kernel->machine->ReadRegister(PCReg));
