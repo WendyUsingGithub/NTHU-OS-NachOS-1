@@ -2,7 +2,7 @@
  *     Data structures defining the Nachos Object Code Format
  *
  *     Basically, we only know about three types of segments:
- *	code (read-only), initialized data, and unitialized data
+ *	    code (read-only), initialized data, and unitialized data
  */
 
 #define NOFFMAGIC	0xbadfad 	
