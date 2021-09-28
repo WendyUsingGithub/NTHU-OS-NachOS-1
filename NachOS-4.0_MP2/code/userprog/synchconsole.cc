@@ -118,7 +118,6 @@ SynchConsoleOutput::PutInt(int value)
         consoleOutput->PutChar(str[idx]);
 	    idx++;
         waitFor->P();
-	
     } while(str[idx] != '\0');
     lock->Release();
 }

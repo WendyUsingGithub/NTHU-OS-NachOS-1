@@ -129,19 +129,18 @@ Machine::OneInstruction(Instruction *instr)
     int nextLoadValue = 0; 	// record delayed load operation, to apply in the future
 
     /* fetch instruction */ 
-    if (!ReadMem(registers[PCReg], 4, &raw))
-	return;	// exception occurred 
+    if (!ReadMem(registers[PCReg], 4, &raw)) return;	// exception occurred 
     instr->value = raw;
     instr->Decode();
 
     if (debug->IsEnabled('m')) {
         struct OpString *str = &opStrings[instr->opCode];
-	char buf[80];
+	    char buf[80];
 
         ASSERT(instr->opCode <= MaxOpcode);
         cout << "At PC = " << registers[PCReg];
-	sprintf(buf, str->format, TypeToReg(str->args[0], instr),
-	     TypeToReg(str->args[1], instr), TypeToReg(str->args[2], instr));
+	    sprintf(buf, str->format, TypeToReg(str->args[0], instr),
+	    TypeToReg(str->args[1], instr), TypeToReg(str->args[2], instr));
         cout << "\t" << buf << "\n";
     }
     

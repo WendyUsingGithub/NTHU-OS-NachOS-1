@@ -21,7 +21,5 @@ typedef struct noffHeader {
 #ifdef RDATA
    Segment readonlyData;	/* read only data */
 #endif
-   Segment uninitData;		/* uninitialized data segment --
-				 * should be zero'ed before use 
-				 */
+   Segment uninitData;		/* uninitialized data segment, should be zero'ed before use */
 } NoffHeader;

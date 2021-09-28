@@ -277,7 +277,7 @@ int Kernel::Exec(char* name)
 	t[threadNum]->Fork((VoidFunctionPtr) &ForkExecute, (void *)t[threadNum]);
 	threadNum++;
 
-	return threadNum-1;
+	return threadNum - 1;
 
     // cout << "Total threads number is " << execfileNum << endl;
     // for (int n=1;n<=execfileNum;n++) {

@@ -121,8 +121,7 @@ bool AddrSpace::Load(char *fileName)
 
 #ifdef RDATA
 // how big is address space?
-    size = noffH.code.size + noffH.readonlyData.size + noffH.initData.size +
-           noffH.uninitData.size + UserStackSize;	
+    size = noffH.code.size + noffH.readonlyData.size + noffH.initData.size + noffH.uninitData.size + UserStackSize;	
     // we need to increase the size to leave room for the stack
 #else
 // how big is address space?

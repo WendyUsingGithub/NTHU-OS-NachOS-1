@@ -292,12 +292,13 @@ Interrupt::CheckIfDue(bool advanceClock)
     Statistics *stats = kernel->stats;
 
     ASSERT(level == IntOff);		// interrupts need to be disabled,
-					// to invoke an interrupt handler
+	
+    // to invoke an interrupt handler
     if (debug->IsEnabled(dbgInt)) {
-	DumpState();
+	    DumpState();
     }
     if (pending->IsEmpty()) {   	// no pending interrupts
-	return FALSE;	
+	    return FALSE;	
     }		
     next = pending->Front();
 
@@ -306,10 +307,10 @@ Interrupt::CheckIfDue(bool advanceClock)
             return FALSE;
         }
         else {      		// advance the clock to next interrupt
-	    stats->idleTicks += (next->when - stats->totalTicks);
-	    stats->totalTicks = next->when;
-	    // UDelay(1000L); // rcgood - to stop nachos from spinning.
-	}
+	        stats->idleTicks += (next->when - stats->totalTicks);
+	        stats->totalTicks = next->when;
+	        // UDelay(1000L); // rcgood - to stop nachos from spinning.
+	    }
     }
 
     DEBUG(dbgInt, "Invoking interrupt handler for the ");
@@ -323,9 +324,8 @@ Interrupt::CheckIfDue(bool advanceClock)
     do {
         next = pending->RemoveFront();    // pull interrupt off list
         next->callOnInterrupt->CallBack();// call the interrupt handler
-	delete next;
-    } while (!pending->IsEmpty() 
-    		&& (pending->Front()->when <= stats->totalTicks));
+	    delete next;
+    } while (!pending->IsEmpty() && (pending->Front()->when <= stats->totalTicks));
     inHandler = FALSE;
     return TRUE;
 }

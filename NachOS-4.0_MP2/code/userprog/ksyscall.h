@@ -17,7 +17,7 @@
 
 void SysHalt()
 {
-  kernel->interrupt->Halt();
+    kernel->interrupt->Halt();
 }
 
 void SysPrintInt(int number)
@@ -51,7 +51,7 @@ int SysWrite(char *buffer, int size, int id)
 	// return value
 	// positive integer: success
 	// -1: failed
-	return kernel->WriteFile(buffer, size, id);
+    return kernel->WriteFile(buffer, size, id);
 }
 
 int SysRead(char *buffer, int size, int id)

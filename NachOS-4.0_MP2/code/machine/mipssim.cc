@@ -130,8 +130,8 @@ Machine::OneInstruction(Instruction *instr)
 				// in the future
 
     // Fetch instruction 
-    if (!ReadMem(registers[PCReg], 4, &raw))
-	return;			// exception occurred
+    if (!ReadMem(registers[PCReg], 4, &raw)) return;			// exception occurred
+
     instr->value = raw;
     instr->Decode();
 
@@ -151,7 +151,6 @@ Machine::OneInstruction(Instruction *instr)
     int sum, diff, tmp, value;
     unsigned int rs, rt, imm;
 
-    /* wendy strange tag */ 
 	// cout << "instr->opCode " << (int)instr->opCode << endl;
 
     // Execute the instruction (cf. Kane's book)
